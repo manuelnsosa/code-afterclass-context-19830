@@ -16,10 +16,7 @@ const NavBar = () => (
             </Link>
             <ul className='hidden md:flex px-4 mx-auto font-semibold font-heading space-x-12'>
               <li>
-                <Link
-                  to='/contact'
-                  className='text-gray-800 hover:text-blue-300'
-                >
+                <Link to='/' className='text-gray-800 hover:text-blue-300'>
                   Home
                 </Link>
               </li>
@@ -49,7 +46,10 @@ const NavBar = () => (
               </li>
             </ul>
             <div className='hidden xl:flex items-center space-x-5 items-center'>
-              <Link to='/contact' className='text-gray-800 hover:text-blue-300'>
+              <Link
+                to='/wishlist'
+                className='text-gray-800 hover:text-blue-300'
+              >
                 <svg
                   xmlns='http://www.w3.org/2000/svg'
                   className='h-6 w-6'
@@ -89,9 +89,8 @@ const NavBar = () => (
                 </span>
               </Link>
               <Link
-                to='/contact'
+                to='/profile'
                 className='flex items-center text-gray-800 hover:text-blue-300'
-                href='#'
               >
                 <svg
                   xmlns='http://www.w3.org/2000/svg'
@@ -111,7 +110,7 @@ const NavBar = () => (
             </div>
           </div>
 
-          <Link to='cart' className='xl:hidden flex mr-6 items-center'>
+          <Link to='profile' className='xl:hidden flex mr-6 items-center'>
             <svg
               xmlns='http://www.w3.org/2000/svg'
               className='h-6 w-6 text-gray-800 hover:text-blue-300'

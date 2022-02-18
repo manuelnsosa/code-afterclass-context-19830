@@ -11,7 +11,7 @@ const plants = [
     registerDate: new Date('2017-01-03'),
     capacity: 7,
     image: 'https://i.ibb.co/CnB47Zc/crassulagreenmini-45.webp',
-    price: '$650',
+    price: '650',
   },
   {
     id: 2,
@@ -24,7 +24,7 @@ const plants = [
     rectColor: '#6da3fb',
     registerDate: new Date('2018-03-03'),
     image: 'https://i.ibb.co/GxTxfjj/philodendronbrokenheart-45-1.webp',
-    price: '$500',
+    price: '500',
   },
   {
     id: 3,
@@ -37,7 +37,7 @@ const plants = [
     rectColor: '#a17cf3',
     registerDate: new Date('2018-03-03'),
     image: 'https://i.ibb.co/xz9KtmS/moneygolden-45-1.webp',
-    price: '$850',
+    price: '850',
   },
 ];
 

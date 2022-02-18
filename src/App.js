@@ -1,21 +1,27 @@
-import './App.css';
+import { React } from 'react';
 import { Routes, Route } from 'react-router-dom';
 import NavBar from './components/NavBar';
 import Contact from './components/Contact';
 import Home from './components/Home';
-import PlantDetail from './components/PlantDetail';
+import PlantDetailContainer from './components/PlantDetailContainer';
 import CartDetail from './components/CartDetail';
+import Profile from './components/Profile';
+import CartContextProvider from './Context/CartContext';
+import './App.css';
 
 function App() {
   return (
     <>
       <NavBar />
-      <Routes>
-        <Route path='/' element={<Home />} />
-        <Route path='/contact' element={<Contact />} />
-        <Route path='plant/:id' element={<PlantDetail />} />
-        <Route path='cart' element={<CartDetail />} />
-      </Routes>
+      <CartContextProvider>
+        <Routes>
+          <Route path='/' element={<Home />} />
+          <Route path='/contact' element={<Contact />} />
+          <Route path='plant/:id' element={<PlantDetailContainer />} />
+          <Route path='cart' element={<CartDetail />} />
+          <Route path='profile' element={<Profile />} />
+        </Routes>
+      </CartContextProvider>
     </>
   );
 }
