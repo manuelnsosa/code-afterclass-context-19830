@@ -10,11 +10,11 @@ const Profile = () => (
           to='/'
           className='block mx-auto bg-center bg-no-repeat bg-cover w-20 h-20 rounded-full border border-gray-400 shadow-lg'
         >
-          <image
+          <img
             src='/1619813643575.jpeg'
-            alt='profile picture'
+            alt='couldnt load'
             style={{ borderRadius: '50%' }}
-          />{' '}
+          />
         </Link>
         <p className='font-serif font-semibold'>Manuel Sosa</p>
         <span className='text-sm text-gray-400'>Rosario, Argentina</span>
