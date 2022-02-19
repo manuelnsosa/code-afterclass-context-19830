@@ -1,10 +1,10 @@
 import { React, useContext } from 'react';
 import { Link } from 'react-router-dom';
-import { CartContext } from '../../Context/CartContext';
+import { CartContext } from '../CartContext';
 
 const CartDetail = () => {
-  const { cart } = useContext(CartContext);
-  console.log(cart);
+  const { cart, deleteFromCart, buyAll } = useContext(CartContext);
+
   return (
     <div className='container mx-auto mt-10'>
       <div className='flex shadow-md my-10'>
@@ -37,12 +37,12 @@ const CartDetail = () => {
                   <div className='flex flex-col justify-between ml-4 flex-grow'>
                     <span className='font-bold text-sm'>{item.name}</span>
                     <span className='text-red-500 text-xs'>Indoor</span>
-                    <Link
-                      to='/'
+                    <button
+                      onClick={() => deleteFromCart(item.id)}
                       className='font-semibold hover:text-red-500 text-gray-500 text-xs'
                     >
                       Remove
-                    </Link>
+                    </button>
                   </div>
                 </div>
                 <div className='flex justify-center w-1/5'>
@@ -56,7 +56,7 @@ const CartDetail = () => {
                   <input
                     className='mx-2 border text-center w-8'
                     type='text'
-                    value='1'
+                    value={item.count}
                     readOnly
                   />
 
@@ -71,7 +71,7 @@ const CartDetail = () => {
                   ${item.price}
                 </span>
                 <span className='text-center w-1/5 font-semibold text-sm'>
-                  ${parseInt(item.price) * parseInt(item.quantity)}
+                  ${parseInt(item.price) * parseInt(item.count)}
                 </span>
               </div>
             ))}
@@ -94,8 +94,8 @@ const CartDetail = () => {
             Order Summary
           </h1>
           <div className='flex justify-between mt-10 mb-5'>
-            <span className='font-semibold text-sm uppercase'>Items 3</span>
-            <span className='font-semibold text-sm'>590$</span>
+            <span className='font-semibold text-sm uppercase'>Items 1</span>
+            <span className='font-semibold text-sm'>$10</span>
           </div>
           <div>
             <label className='font-medium inline-block mb-3 text-sm uppercase'>
@@ -128,8 +128,11 @@ const CartDetail = () => {
               <span>Total cost</span>
               <span>$600</span>
             </div>
-            <button className='bg-indigo-500 font-semibold hover:bg-indigo-600 py-3 text-sm text-white uppercase w-full'>
-              Checkout
+            <button
+              onClick={buyAll}
+              className='bg-indigo-500 font-semibold hover:bg-indigo-600 py-3 text-sm text-white uppercase w-full'
+            >
+              Buy
             </button>
           </div>
         </div>

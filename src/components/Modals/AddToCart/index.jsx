@@ -5,11 +5,10 @@ import DialogActions from '@mui/material/DialogActions';
 import DialogContent from '@mui/material/DialogContent';
 import DialogContentText from '@mui/material/DialogContentText';
 import DialogTitle from '@mui/material/DialogTitle';
-import { CartContext } from '../../../Context/CartContext';
+import { CartContext } from '../../CartContext';
 
-const AlertDialog = ({ fn, message, btnContent, count, plant }) => {
+const AddToCart = ({ fn, message, btnContent, count, plant }) => {
   const [open, setOpen] = useState(false);
-
   const { addToCart } = useContext(CartContext);
 
   const handleClickOpen = () => {
@@ -44,8 +43,8 @@ const AlertDialog = ({ fn, message, btnContent, count, plant }) => {
           <Button onClick={handleClose}>Disagree</Button>
           <Button
             onClick={() => {
-              addToCart({ ...plant, quantity: count });
               handleClose();
+              addToCart({ ...plant, count });
             }}
             autoFocus
           >
@@ -57,4 +56,6 @@ const AlertDialog = ({ fn, message, btnContent, count, plant }) => {
   );
 };
 
-export default AlertDialog;
+export default AddToCart;
+
+//addToCart({ ...plant, quantity: count });
