@@ -10,7 +10,7 @@ const Profile = () => (
           to='/'
           className='block mx-auto bg-center bg-no-repeat bg-cover w-20 h-20 rounded-full border border-gray-400 shadow-lg'
         >
-          <img
+          <image
             src='/1619813643575.jpeg'
             alt='profile picture'
             style={{ borderRadius: '50%' }}
