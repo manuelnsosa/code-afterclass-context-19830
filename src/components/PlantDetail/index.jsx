@@ -203,6 +203,7 @@ const PlantDetail = ({ plant }) => {
               message='Add to cart'
               btnContent='Add to cart'
               count={count}
+              setCount={setCount}
               plant={plant}
             />
           </div>

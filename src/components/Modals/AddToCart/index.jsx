@@ -7,8 +7,9 @@ import DialogContentText from '@mui/material/DialogContentText';
 import DialogTitle from '@mui/material/DialogTitle';
 import { CartContext } from '../../CartContext';
 
-const AddToCart = ({ fn, message, btnContent, count, plant }) => {
+const AddToCart = ({ fn, message, btnContent, count, setCount, plant }) => {
   const [open, setOpen] = useState(false);
+
   const { addToCart } = useContext(CartContext);
 
   const handleClickOpen = () => {
@@ -45,6 +46,7 @@ const AddToCart = ({ fn, message, btnContent, count, plant }) => {
             onClick={() => {
               handleClose();
               addToCart({ ...plant, count });
+              setCount(1);
             }}
             autoFocus
           >

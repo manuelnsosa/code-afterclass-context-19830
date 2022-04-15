@@ -1,4 +1,4 @@
-const customFetch = (data, stallTime = 2000) => {
+const customFetch = (data, stallTime = 0) => {
   return new Promise((resolve, reject) =>
     setTimeout(() => {
       try {
@@ -8,7 +8,7 @@ const customFetch = (data, stallTime = 2000) => {
       } catch (err) {
         reject(err);
       }
-    }, stallTime)
+    }, stallTime),
   );
 };
 

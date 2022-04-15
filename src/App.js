@@ -6,8 +6,8 @@ import Home from './components/Home';
 import PlantDetailContainer from './components/PlantDetailContainer';
 import CartDetail from './components/CartDetail';
 import Profile from './components/Profile';
-import CartContextProvider from './components/CartContext';
 import './App.css';
+import CartContextProvider from './components/CartContext';
 
 function App() {
   return (

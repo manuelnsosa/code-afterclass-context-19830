@@ -1,9 +1,11 @@
-import { React, useContext } from 'react';
+import React, { useContext } from 'react';
 import { Link } from 'react-router-dom';
-import { CartContext } from '../CartContext';
+import { CartContext } from '../../components/CartContext';
 
 const CartDetail = () => {
-  const { cart, deleteFromCart, buyAll } = useContext(CartContext);
+  const { cart, removeFromCart, buyAll } = useContext(CartContext);
+
+  console.log(cart);
 
   return (
     <div className='container mx-auto mt-10'>
@@ -38,7 +40,7 @@ const CartDetail = () => {
                     <span className='font-bold text-sm'>{item.name}</span>
                     <span className='text-red-500 text-xs'>Indoor</span>
                     <button
-                      onClick={() => deleteFromCart(item.id)}
+                      onClick={() => removeFromCart(item.id)}
                       className='font-semibold hover:text-red-500 text-gray-500 text-xs'
                     >
                       Remove
